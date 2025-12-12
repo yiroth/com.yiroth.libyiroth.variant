@@ -40,7 +40,7 @@ namespace LibYiroth.Variant.Editor
             if (variantProp != null)
             {
                 // Look for _type. If not found, Unity serialization hasn't refreshed or [SerializeField] is missing.
-                SerializedProperty typeProp = variantProp.FindPropertyRelative("_type");
+                SerializedProperty typeProp = variantProp.FindPropertyRelative("type");
 
                 if (typeProp != null)
                 {
