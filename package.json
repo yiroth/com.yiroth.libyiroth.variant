@@ -1,0 +1,11 @@
+{
+  "name": "com.yiroth.libyiroth.variant",
+  "displayName": "LibYiroth - Variant",
+  "author": {
+    "name": "yiroth"
+  },
+  "version": "0.0.1",
+  "unity": "6000.3",
+  "description": "LibYiroth, Variant",
+  "relatedPackages": {}
+}

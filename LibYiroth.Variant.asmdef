@@ -1,0 +1,14 @@
+{
+    "name": "LibYiroth.Variant",
+    "rootNamespace": "LibYiroth.Variant",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
