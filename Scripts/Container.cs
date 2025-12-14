@@ -23,11 +23,9 @@ namespace LibYiroth.Variant
     [System.Serializable]
     public class Container
     {
-        private string _name;
-
-        private VariantTypes _type;
-
-        private Variant _variable;
+        [SerializeField] private string _name;
+        [SerializeField] private VariantTypes _type;
+        [SerializeField] private Variant _variable;
 
         public Container(string name, VariantTypes type, Variant variable)
         {
@@ -57,6 +55,12 @@ namespace LibYiroth.Variant
         public VariantTypes GetVariableType()
         {
             return _variable.GetType();
+        }
+        
+        public Container Clone()
+        {
+            // Variant is a struct => value-copy is safe
+            return new Container(_name, _type, _variable);
         }
     }
 }
