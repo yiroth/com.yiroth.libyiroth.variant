@@ -16,56 +16,47 @@
  * Purpose: Named container for the Variant type
  */
 
+using UnityEngine;
+
 namespace LibYiroth.Variant
 {
     [System.Serializable]
     public class Container
     {
-        public string name;
+        private string _name;
 
-        public VariantTypes type;
+        private VariantTypes _type;
 
-        public Variant variable;
+        private Variant _variable;
 
-        private Container(string name, VariantTypes type)
+        public Container(string name, VariantTypes type, Variant variable)
         {
-            this.name = name;
-            this.type = type;
+            this._name = name;
+            this._type = type;
+            this._variable = variable;
         }
-
-        public Container(string name, VariantTypes type, float variable) : this(name, type)
-        {
-            this.variable = new Variant(variable);
-        }
-
-        public Container(string name, VariantTypes type, int variable) : this(name, type)
-        {
-            this.variable = new Variant(variable);
-        }
-
-        public Container(string name, VariantTypes type, bool variable) : this(name, type)
-        {
-            this.variable = new Variant(variable);
-        }
-
-        public Container(string name, VariantTypes type, string variable) : this(name, type)
-        {
-            this.variable = new Variant(variable);
-        }
+        
+        public Container(string name, VariantTypes type, object value) : this(name, type, new Variant(value)) { }
+        public Container(string name, VariantTypes type, float value) : this(name, type, new Variant(value)) { }
+        public Container(string name, VariantTypes type, int value) : this(name, type, new Variant(value)) { }
+        public Container(string name, VariantTypes type, bool value) : this(name, type, new Variant(value)) { }
+        public Container(string name, VariantTypes type, string value) : this(name, type, new Variant(value)) { }
+        public Container(string name, VariantTypes type, Vector2 value) : this(name, type, new Variant(value)) { }
+        public Container(string name, VariantTypes type, Vector3 value) : this(name, type, new Variant(value)) { }
 
         public object GetRawVariable()
         {
-            return variable.GetRawValue();
+            return _variable.GetRawValue();
         }
 
         public T GetVariable<T>()
         {
-            return variable.GetValue<T>();
+            return _variable.GetValue<T>();
         }
         
-        public VariantTypes GetVariantType()
+        public VariantTypes GetVariableType()
         {
-            return variable.GetType();
+            return _variable.GetType();
         }
     }
 }
