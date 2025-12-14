@@ -68,38 +68,36 @@ namespace LibYiroth.Variant
 
         public void Set<T>(T v)
         {
-            if (v.GetType() is T direct)
+            switch (v)
             {
-                switch (direct)
-                {
-                    case float f:
-                        type = VariantTypes.Float;
-                        floatValue = f;
-                        return;
-                    case int i:
-                        type = VariantTypes.Int;
-                        intValue = i;
-                        return;
-                    case bool b:
-                        type = VariantTypes.Bool;
-                        boolValue = b;
-                        return;
-                    case string s:
-                        type = VariantTypes.String;
-                        stringValue = s;
-                        return;
-                    case Vector2 v2:
-                        type = VariantTypes.Vector2;
-                        vector2Value = v2;
-                        return;
-                    case Vector3 v3:
-                        type = VariantTypes.Vector3;
-                        vector3Value = v3;
-                        return;
-                }
+                case float f:
+                    type = VariantTypes.Float;
+                    floatValue = f;
+                    return;
+                case int i:
+                    type = VariantTypes.Int;
+                    intValue = i;
+                    return;
+                case bool b:
+                    type = VariantTypes.Bool;
+                    boolValue = b;
+                    return;
+                case string s:
+                    type = VariantTypes.String;
+                    stringValue = s;
+                    return;
+                case Vector2 v2:
+                    type = VariantTypes.Vector2;
+                    vector2Value = v2;
+                    return;
+                case Vector3 v3:
+                    type = VariantTypes.Vector3;
+                    vector3Value = v3;
+                    return;
+                default:
+                    type = VariantTypes.Empty;
+                    return;
             }
-
-            type = VariantTypes.Empty;
         }
 
         public new VariantTypes GetType() => type;
