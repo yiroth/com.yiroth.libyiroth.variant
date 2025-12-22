@@ -36,8 +36,8 @@ namespace LibYiroth.Variant
     {
         [SerializeField] private VariantTypes type;
 
-        [SerializeField] private float floatValue;
         [SerializeField] private int intValue;
+        [SerializeField] private float floatValue;
         [SerializeField] private bool boolValue;
         [SerializeField] private string stringValue;
         [SerializeField] private Vector2 vector2Value;
@@ -49,8 +49,8 @@ namespace LibYiroth.Variant
             
             switch (value)
             {
-                case float f: Set<float>(f); break;
                 case int i: Set<int>(i); break;
+                case float f: Set<float>(f); break;
                 case bool b: Set<bool>(b); break;
                 case string s: Set<string>(s); break;
                 case Vector2 s: Set<Vector2>(s); break;
@@ -59,8 +59,8 @@ namespace LibYiroth.Variant
             }
         }
 
-        public Variant(float value) : this() => Set<float>(value);
         public Variant(int value) : this() => Set<int>(value);
+        public Variant(float value) : this() => Set<float>(value);
         public Variant(bool value) : this() => Set<bool>(value);
         public Variant(string value) : this() => Set<string>(value);
         public Variant(Vector2 value) : this() => Set<Vector2>(value);
@@ -70,13 +70,13 @@ namespace LibYiroth.Variant
         {
             switch (v)
             {
-                case float f:
-                    type = VariantTypes.Float;
-                    floatValue = f;
-                    return;
                 case int i:
                     type = VariantTypes.Int;
                     intValue = i;
+                    return;
+                case float f:
+                    type = VariantTypes.Float;
+                    floatValue = f;
                     return;
                 case bool b:
                     type = VariantTypes.Bool;
@@ -115,8 +115,8 @@ namespace LibYiroth.Variant
         
         public T GetValue<T>()
         {
-            if (typeof(T) == typeof(float)) return (T)(object)floatValue;
             if (typeof(T) == typeof(int)) return (T)(object)intValue;
+            if (typeof(T) == typeof(float)) return (T)(object)floatValue;
             if (typeof(T) == typeof(bool)) return (T)(object)boolValue;
             if (typeof(T) == typeof(string)) return (T)(object)stringValue;
             if (typeof(T) == typeof(Vector2)) return (T)(object)vector2Value;
@@ -140,10 +140,10 @@ namespace LibYiroth.Variant
             return VariantTypes.Empty;
         }
 
-        public static implicit operator float(Variant v) => v.GetValue<float>();
-        public static implicit operator Variant(float f) => new Variant(f);
         public static implicit operator int(Variant v) => v.GetValue<int>();
         public static implicit operator Variant(int i) => new Variant(i);
+        public static implicit operator float(Variant v) => v.GetValue<float>();
+        public static implicit operator Variant(float f) => new Variant(f);
         public static implicit operator bool(Variant v) => v.GetValue<bool>();
         public static implicit operator Variant(bool b) => new Variant(b);
         public static implicit operator string(Variant v) => v.GetValue<string>();
