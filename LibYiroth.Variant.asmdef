@@ -1,7 +1,9 @@
 {
     "name": "LibYiroth.Variant",
     "rootNamespace": "LibYiroth.Variant",
-    "references": [],
+    "references": [
+        "GUID:4703e8c27ee5a1d4f8bae7178ed17962"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
