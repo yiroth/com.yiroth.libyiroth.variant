@@ -42,7 +42,7 @@ namespace LibYiroth.Variant.Editor
             Rect valueRect = new Rect(position.x + nameWidth + typeWidth + (spacing * 2), position.y, valueWidth, position.height);
 
             // Draw Name Field
-            SerializedProperty nameProp = property.FindPropertyRelative("name");
+            SerializedProperty nameProp = property.FindPropertyRelative("_name");
             if (nameProp != null)
             {
                 // GUIContent.none ensures we just get the text box, which prevents layout locking
@@ -54,10 +54,10 @@ namespace LibYiroth.Variant.Editor
             }
 
             // Draw Type Dropdown & Value
-            SerializedProperty variantProp = property.FindPropertyRelative("variable");
+            SerializedProperty variantProp = property.FindPropertyRelative("_variable");
             if (variantProp != null)
             {
-                // Look for _type. If not found, Unity serialization hasn't refreshed or [SerializeField] is missing.
+                // Look for type. If not found, Unity serialization hasn't refreshed or [SerializeField] is missing.
                 SerializedProperty typeProp = variantProp.FindPropertyRelative("type");
 
                 if (typeProp != null)
@@ -82,6 +82,12 @@ namespace LibYiroth.Variant.Editor
                             break;
                         case VariantTypes.String:
                             valueProp = variantProp.FindPropertyRelative("stringValue");
+                            break;
+                        case VariantTypes.Vector2:
+                            valueProp = variantProp.FindPropertyRelative("vector2Value");
+                            break;
+                        case VariantTypes.Vector3:
+                            valueProp = variantProp.FindPropertyRelative("vector3Value");
                             break;
                     }
 
