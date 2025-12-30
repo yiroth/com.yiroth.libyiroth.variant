@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Purpose: A structure to keep mostly used values all together to provide dynamic variable management
+ * Purpose: A structure that can handle multiple types of variables 
  */
 
 using UnityEngine;

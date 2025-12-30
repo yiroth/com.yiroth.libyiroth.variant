@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Purpose: Named container for the Variant type
+ * Purpose: A container for the Variant type with a name and type information
  */
 
 using UnityEngine;

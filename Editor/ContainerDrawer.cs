@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Purpose: For to keep editor inspector UI clean
+ * Purpose: For to keep editor inspector interface clean for the Container
  */
 
 using System.Linq;
