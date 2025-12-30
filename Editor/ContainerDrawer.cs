@@ -40,7 +40,7 @@ namespace LibYiroth.Variant.Editor
             {
                 // Draw only Variant (Type + Value)
                 SerializedProperty variantProp = property.FindPropertyRelative("variable");
-                if (variantProp != null)
+                if (Helper.Cardinal.IsValid(variantProp))
                 {
                     VariantDrawer.Draw(position, variantProp);
                 }
@@ -56,7 +56,7 @@ namespace LibYiroth.Variant.Editor
 
                 // Draw Name Field
                 SerializedProperty nameProp = property.FindPropertyRelative("name");
-                if (nameProp != null)
+                if (Helper.Cardinal.IsValid(nameProp))
                 {
                     // GUIContent.none ensures we just get the text box, which prevents layout locking
                     EditorGUI.PropertyField(nameRect, nameProp, GUIContent.none);
@@ -68,7 +68,7 @@ namespace LibYiroth.Variant.Editor
 
                 // Draw Type Dropdown & Value
                 SerializedProperty variantProp = property.FindPropertyRelative("variable");
-                if (variantProp != null)
+                if (Helper.Cardinal.IsValid(variantProp))
                 {
                     VariantDrawer.Draw(variantRect, variantProp);
                 }

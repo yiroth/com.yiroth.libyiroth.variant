@@ -35,7 +35,7 @@ namespace LibYiroth.Variant.Editor
             // Look for type. If not found, Unity serialization hasn't refreshed or [SerializeField] is missing.
             SerializedProperty typeProp = variantProp.FindPropertyRelative("type");
 
-            if (typeProp != null)
+            if (Helper.Cardinal.IsValid(typeProp))
             {
                 // Draw Type Dropdown
                 EditorGUI.PropertyField(typeRect, typeProp, GUIContent.none);
@@ -66,7 +66,7 @@ namespace LibYiroth.Variant.Editor
                         break;
                 }
 
-                if (valueProp != null)
+                if (Helper.Cardinal.IsValid(valueProp))
                 {
                     EditorGUI.PropertyField(valueRect, valueProp, GUIContent.none);
                 }
