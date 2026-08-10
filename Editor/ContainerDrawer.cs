@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 yiroth
+ * Copyright 2025 Ashrose
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace LibYiroth.Variant.Editor
+namespace Ashrose.Variant.Editor
 {
     [CustomPropertyDrawer(typeof(Container))]
     public class ContainerDrawer : PropertyDrawer
@@ -30,7 +30,7 @@ namespace LibYiroth.Variant.Editor
             EditorGUI.BeginProperty(position, label, property);
 
             // Check if [HideAttribute] attribute is present on the field using this Container
-            bool hideAttribute = fieldInfo.GetCustomAttributes(typeof(LibYiroth.Helper.Editor.HideAttribute), true).Any();
+            bool hideAttribute = fieldInfo.GetCustomAttributes(typeof(Ashrose.Helper.Editor.HideAttribute), true).Any();
 
             // Calculate Rects with proper spacing
             float spacing = 5f;
