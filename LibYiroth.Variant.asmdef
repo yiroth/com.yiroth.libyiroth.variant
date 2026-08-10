@@ -1,6 +1,6 @@
 {
-    "name": "LibYiroth.Variant",
-    "rootNamespace": "LibYiroth.Variant",
+    "name": "Ashrose.Variant",
+    "rootNamespace": "Ashrose.Variant",
     "references": [
         "GUID:4703e8c27ee5a1d4f8bae7178ed17962"
     ],
