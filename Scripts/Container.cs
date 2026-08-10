@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2025 yiroth
+ * Copyright 2025 Ashrose
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 
 using UnityEngine;
 
-namespace LibYiroth.Variant
+namespace Ashrose.Variant
 {
     [System.Serializable]
     public class Container
