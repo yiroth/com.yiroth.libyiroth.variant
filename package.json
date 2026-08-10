@@ -1,11 +1,11 @@
 {
-  "name": "com.yiroth.libyiroth.variant",
-  "displayName": "LibYiroth - Variant",
+  "name": "com.ashrose.variant",
+  "displayName": "Ashrose - Variant",
   "author": {
-    "name": "yiroth"
+    "name": "rosimelade"
   },
-  "version": "0.0.1",
-  "unity": "6000.3",
-  "description": "LibYiroth, Variant",
+  "version": "0.0.2",
+  "unity": "6000.5",
+  "description": "Ashrose, Variant",
   "relatedPackages": {}
 }
